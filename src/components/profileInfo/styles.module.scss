@@ -1,0 +1,20 @@
+@import "../../styles/colors.scss";
+
+
+.upperRow{
+    display: flex;
+    margin-bottom: 30px;
+    img{
+        display: block;
+        margin-right: 60px;
+        width: 300px;
+        height: 300px;
+        object-fit: contain;
+    }
+}
+
+.episodeName{
+    display: inline-block;
+    margin-left: 10px;
+    color: $accent;
+}

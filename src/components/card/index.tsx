@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "../button";
 
 import styles from './styles.module.scss';
@@ -15,9 +16,12 @@ const Card = ({data}:any) => {
             
             
             <div className={styles.cardInfo}>
-                <h3>Name: {data.name}</h3>
-                <span>Status: {data.status}</span>
-                <div onClick={() => setShowImage(!showImage)}>
+                <Link to={'/profile/' + data.id}>
+                    <h3>Name: {data.name}</h3>
+                    <span>Status: {data.status}</span>
+                </Link>
+                
+                <div style={{width: 'fit-content'}} onClick={() => setShowImage(!showImage)}>
                     <Button text={showImage ? "Hide image" : "Show image"} />
                 </div>
             </div>
