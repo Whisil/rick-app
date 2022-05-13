@@ -30,8 +30,7 @@ const Profile = () => {
         })
 
         fetchChar();
-
-    }, [])
+    }, [userId])
 
     useEffect(() => {
         const fetchEpisodes = async (urls:any) => {

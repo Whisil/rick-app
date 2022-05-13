@@ -1,0 +1,50 @@
+@import "../../styles/colors.scss";
+
+.searchContainer{
+    width: 200px;
+    position: relative;
+}
+
+
+.input{
+    width: 100%;
+    border: 1px solid $secondary;
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.list{
+    margin: 0;
+    width: 110%;
+    padding-left: 0;
+    list-style: none;
+    border: 1px solid $secondary;
+    background-color: $primary;
+    border-radius: 10px;
+    overflow-y:scroll;
+    max-height: 190px;
+    position: absolute;
+    visibility: hidden;
+    transition: visibility .3s ease-out;
+    opacity: 0;
+    li{
+        padding: 5px 5px;
+        border-bottom: 1px solid $secondary;
+        a{
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+.input:focus-visible{
+    outline: 0;
+    ~ .list{
+        visibility: visible;
+        opacity: 1;
+    }
+}

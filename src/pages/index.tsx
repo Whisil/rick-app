@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
 import Button from "../components/button";
 import Card from "../components/card";
 
 
 import styles from '../styles/home.module.scss';
 
-const Home = ({setProfileId}:any) => {
+const Home = () => {
 
     const [page, setPage] = useState(1);
     const [chars, setChars] = useState<any>([]);
 
     useEffect(() => {
         let fetchTimeout = setTimeout(() => getAllCharacters(page), 10);
-
         return () => clearTimeout(fetchTimeout);
+        
     }, [page])
 
     const getAllCharacters = (page:number) => {
@@ -25,6 +24,7 @@ const Home = ({setProfileId}:any) => {
 
     const onCharsFetch = (newChars:any) => {
         setChars((chars:any) => [...chars, ...newChars]);
+        
     }
 
     return(
@@ -32,7 +32,6 @@ const Home = ({setProfileId}:any) => {
             <div className={styles.cardsContainer}>
                 {chars && chars.map((item:any, i:number) => (
                     <Card data={item} key={i} />
-                    
                 ))}
             </div>
             

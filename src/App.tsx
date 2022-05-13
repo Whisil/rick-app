@@ -2,18 +2,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages";
 import Profile from "./pages/profile";
 import Header from "./components/header";
-import { useState } from "react";
 
 const App = () => {
 
-    const [profileId, setProfileId] = useState(0);
-
     return(
         <>
-            <Header />
             <BrowserRouter>
+                <Header />
                 <Routes>
-                    <Route path='/' element={<Home setProfileId={setProfileId}/>} />
+                    <Route path='/' element={<Home />} />
                     <Route path={'/profile/:userId'} element={<Profile />} />
                 </Routes>
             </BrowserRouter>

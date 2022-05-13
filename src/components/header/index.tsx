@@ -1,9 +1,9 @@
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
-import {ReactComponent as Like} from '../../images/like.svg'
 import { useState } from 'react';
 import styles from './styles.module.scss';
 import { useEffect } from 'react';
 import Button from '../button';
+import SearchBar from '../searchBar';
 
 const Header = () => {
 
@@ -33,9 +33,7 @@ const Header = () => {
     return (
       <header className={styles.header}>
         <nav className={styles.nav}>
-          <div className={styles.liked}>
-            <Like className={styles.like}/>
-          </div>
+          <SearchBar />
           <div className={styles.logins}>
             {!login ?
             <FacebookLogin
@@ -52,7 +50,7 @@ const Header = () => {
             :
               <div className={styles.profile}>
                   <p className={styles.name}>{data.name}</p>
-                  <img src={data.picture.data.url} />
+                  <img src={data.picture.data.url} alt={data.name} />
               </div>
             }
           </div>

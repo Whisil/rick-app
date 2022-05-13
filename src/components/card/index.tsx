@@ -10,7 +10,7 @@ const Card = ({data}:any) => {
 
     return(
         <div className={styles.card}>
-            {data.image && data.image != '' ? 
+            {data.image && data.image !== '' ? 
             showImage ? <img src={data.image} alt={data.name} /> : null   
             : <span>Sorry, no image :)</span>}
             
